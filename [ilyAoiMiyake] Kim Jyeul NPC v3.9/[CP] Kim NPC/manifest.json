@@ -1,0 +1,29 @@
+﻿{
+  "Name": "Kim Jyeul",
+  "Author": "ilyAoiMiyake & ItsBenter",
+  "Version": "3.8.1-1",
+  "Description": "Kim NPC - Art by ItsBenter",
+  "UniqueID": "KimJyeulNPC.ExnoticTest",
+  "MinimumApiVersion": "3.9",
+  "UpdateKeys": [ "Nexus:6486" ],
+  "ContentPackFor": {
+    "UniqueID": "Pathoschild.ContentPatcher",
+    "MinimumVersion": "1.24.0"
+  },
+  "Dependencies": [
+    {
+      "UniqueID": "DIGUS.MailFrameworkMod",
+      "IsRequired": false
+    },
+    {
+      "UniqueID": "malic.cp.jadeNPC",
+      "IsRequired": false
+    },
+    {
+      "UniqueID": "spacechase0.JsonAssets",
+    },
+    {
+      "UniqueID": "PurrplingCat.QuestFramework",
+    },
+  ]
+}

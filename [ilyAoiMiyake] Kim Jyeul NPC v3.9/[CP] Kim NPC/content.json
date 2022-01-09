@@ -1,0 +1,1129 @@
+{
+/*********
+** Kim NPC
+*********/
+    /*********
+    ** Content Patcher Format
+    *********/
+    "Format": "1.24.0",
+
+    /*********
+    ** Config Options 
+    *********/    
+    "ConfigSchema":
+    {
+        "Seasonal-Outfit":
+        {    
+            "AllowValues": "true, false",       
+            "Default": "true"
+        }
+    },
+
+    /*********
+    ** Patches
+    *********/    
+    "Changes":
+    [
+        /*********
+        ** Add Map Merges
+        *********/
+            /*********
+            ** Shop Patch
+            *********/     
+            {
+                "Action": "EditMap",
+                "Target": "Maps/Town",
+                "FromFile": "Assets/Maps/KimShopTMX.tmx",
+                "FromArea": { "X": 0, "Y": 0, "Width": 6, "Height": 4 },
+                "ToArea": { "X": 60, "Y": 22, "Width": 6, "Height": 4 },
+                "PatchMode": "Replace",
+            },    
+    
+        /*********
+        ** Tilesheets
+        *********/ 
+            /*********
+            ** Shop Tilesheet
+            *********/         
+            {
+                "Action": "Load",
+                "Target": "Maps/KimShop",
+                "FromFile": "KimJyeulShopTile.png"
+            }, 
+            /*********
+            ** Shop Tilesheet - Winter
+            *********/        
+            {
+                "Action": "EditImage",
+                "PatchMode": "Replace",
+                "Target": "Maps/KimShop",
+                "FromFile": "KimJyeulShopTileWinter.png",
+                    "When": { "season": "winter" }
+            },
+            /*********
+            ** Shop Tilesheet - Married
+            *********/      
+            {
+                "Action": "EditImage",
+                "PatchMode": "Replace",
+                "Target": "Maps/KimShop",
+                "FromFile": "KimJyeulShopTileMarried.png",
+                    "When": { "Relationship:Kim": "Married" }
+            },
+        
+        /*********
+        ** Festivals        
+        *********/ 
+            /*********
+            ** Spring
+            *********/
+                /*********
+                ** Egg Festival
+                *********/ 
+                {
+                    "Action": "EditData",
+                    "Target": "Data/Festivals/spring13",
+                    "TextOperations":
+                    [
+                        {
+                            "Operation": "Append",
+                            "Target": ["Entries", "Set-Up_additionalCharacters"],
+                            "Value": "Kim 46 57 down",
+                            "Delimiter": "/"
+                        },
+                    ],
+                        "When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": false, },                       
+                },
+
+                /*********
+                ** Flower Festival
+                *********/ 
+                    /*********
+                    ** Set Up
+                    *********/                 
+                    {
+                        "Action": "EditData",
+                        "Target": "Data/Festivals/spring24",
+                        "TextOperations":
+                        [
+                            {
+                                "Operation": "Append",
+                                "Target": ["Entries", "Set-Up_additionalCharacters"],
+                                "Value": "Kim 7 41 down",
+                                "Delimiter": "/"
+                            },
+                        ]   
+                    },
+
+                    /*********
+                    ** Main Event
+                    *********/
+                    {
+                        "Action": "EditData",
+                        "Target": "Data/Festivals/spring24",
+                        "TextOperations":
+                        [
+                            {
+                                "Operation": "Append",
+                                "Target": ["Entries", "MainEvent_additionalCharacters"],
+                                "Value": "Kim 7 41 down",
+                                "Delimiter": "/"
+                            },
+                        ]   
+                    },
+    
+            /*********
+            ** Summer
+            *********/
+                /*********
+                ** Surfing Festival
+                *********/ 
+                {
+                    "LogName": "Adds Kim to the Surfing Festival",
+                    "Action": "EditData",
+                    "Target": "Data/Festivals/summer5",
+                    "TextOperations":
+                    [
+                        {
+                            "Operation": "Append",
+                            "Target": ["Entries", "Set-Up_additionalCharacters"],
+                            "Value": "Kim 37 24 down",
+                            "Delimiter": "/"
+                        },
+                    ]   
+                },
+
+                /*********
+                ** Luau
+                *********/ 
+                    /*********
+                    ** Set Up
+                    *********/                 
+                    {
+                        "Action": "EditData",
+                        "Target": "Data/Festivals/summer11",
+                        "TextOperations":
+                        [
+                            {
+                                "Operation": "Append",
+                                "Target": ["Entries", "Set-Up_additionalCharacters"],
+                                "Value": "Kim 37 24 down",
+                                "Delimiter": "/"
+                            },
+                        ]   
+                    },
+
+                    /*********
+                    ** Main Event
+                    *********/
+                    {
+                        "Action": "EditData",
+                        "Target": "Data/Festivals/summer11",
+                        "TextOperations":
+                        [
+                            {
+                                "Operation": "Append",
+                                "Target": ["Entries", "MainEvent_additionalCharacters"],
+                                "Value": "Kim 37 24 down",
+                                "Delimiter": "/"
+                            },
+                        ]   
+                    },
+
+                /*********
+                ** Moonlight Jellies
+                *********/ 
+                    /*********
+                    ** Set Up
+                    *********/                 
+                    {
+                        "Action": "EditData",
+                        "Target": "Data/Festivals/summer28",
+                        "TextOperations":
+                        [
+                            {
+                                "Operation": "Append",
+                                "Target": ["Entries", "Set-Up_additionalCharacters"],
+                                "Value": "Kim 28 36 down",
+                                "Delimiter": "/"
+                            },
+                        ]   
+                    },                
+    
+            /*********
+            ** Fall
+            *********/
+                /*********
+                ** Stardew Valley Fair
+                *********/            
+                    /*********
+                    ** Set Up
+                    *********/                 
+                    {
+                        "Action": "EditData",
+                        "Target": "Data/Festivals/fall16",
+                        "TextOperations":
+                        [
+                            {
+                                "Operation": "Append",
+                                "Target": ["Entries", "Set-Up_additionalCharacters"],
+                                "Value": "Kim 22 48 down",
+                                "Delimiter": "/"
+                            },
+                        ]   
+                    }, 
+
+                /*********
+                ** Spirit's Eve
+                *********/ 
+                    /*********
+                    ** Set Up
+                    *********/                 
+                    {
+                        "Action": "EditData",
+                        "Target": "Data/Festivals/fall27",
+                        "TextOperations":
+                        [
+                            {
+                                "Operation": "Append",
+                                "Target": ["Entries", "Set-Up_additionalCharacters"],
+                                "Value": "Kim 15 25 left",
+                                "Delimiter": "/"
+                            },
+                        ],
+                            "When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": false, },                          
+                    }, 
+            
+            /*********
+            ** Winter
+            *********/ 
+                /*********
+                ** Ice Festival
+                *********/                       
+                    /*********
+                    ** Set Up
+                    *********/                 
+                    {
+                        "Action": "EditData",
+                        "Target": "Data/Festivals/winter8",
+                        "TextOperations":
+                        [
+                            {
+                                "Operation": "Append",
+                                "Target": ["Entries", "Set-Up_additionalCharacters"],
+                                "Value": "Kim 45 58 down",
+                                "Delimiter": "/"
+                            },
+                        ]   
+                    },
+
+                    /*********
+                    ** Main Event
+                    *********/
+                    {
+                        "Action": "EditData",
+                        "Target": "Data/Festivals/winter8",
+                        "TextOperations":
+                        [
+                            {
+                                "Operation": "Append",
+                                "Target": ["Entries", "Main-Event_additionalCharacters"],
+                                "Value": "Kim 45 58 down",
+                                "Delimiter": "/"
+                            },
+                        ]   
+                    },
+
+                /*********
+                ** Ice Festival
+                *********/                       
+                    /*********
+                    ** Set Up
+                    *********/                 
+                    {
+                        "Action": "EditData",
+                        "Target": "Data/Festivals/winter25",
+                        "TextOperations":
+                        [
+                            {
+                                "Operation": "Append",
+                                "Target": ["Entries", "Set-Up_additionalCharacters"],
+                                "Value": "Kim 24 62 down",
+                                "Delimiter": "/"
+                            },
+                        ]   
+                    },    
+
+    
+        /*********
+        ** NPC Data
+        *********/
+            /*********
+            ** Schedules
+            *********/ 
+                /*********
+                ** Schedule - Base 
+                *********/              
+                {
+                   "Action": "EditData",
+                   "Target": "Characters/Schedules/Kim",
+                   "Entries":
+                    {
+                        "spring_Tue": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "spring_Wed": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "spring_Thu": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "spring_Sat": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "spring_Sun": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "summer_Tue": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "summer_Wed": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "summer_Thu": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "summer_Sat": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "summer_Sun": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "fall_Tue": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "fall_Wed": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "fall_Thu": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "fall_Sat": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                        "fall_Sun": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+                    },
+                        "When": { "HasMod|contains=CPBoardingHouse": false, "Relationship:Kim": "Unmet, Friendly, Dating, Engaged, Divorced" },
+                },
+    
+                /*********
+                ** Schedule - Boarding House  
+                *********/            
+                {
+                    "Action": "EditData",
+                    "Target": "Characters/Schedules/Kim",
+                    "Entries":
+                    {
+                        "spring_Tue": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "spring_Wed": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "spring_Thu": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "spring_Sat": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "spring_Sun": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "summer_Tue": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "summer_Wed": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "summer_Thu": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "summer_Sat": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "summer_Sun": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "fall_Tue": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "fall_Wed": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "fall_Thu": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "fall_Sat": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                        "fall_Sun": "700 Town 63 24 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+                    },
+                        "When": { "HasMod|contains=CPBoardingHouse": true, "Relationship:Kim": "Unmet, Friendly, Dating, Engaged, Divorced" },
+                },
+
+            /*********
+            ** Romance
+            *********/    
+                /*********
+                ** Engagement Dialogue
+                *********/             
+                {
+                    "LogName": "Kim NPC - Engagement Dialogue",
+                    "Action": "EditData",
+                    "Target": "Data/EngagementDialogue",
+                    "Entries":
+                    {
+                        "Kim1": "Wow, I can't believe I'm getting married!$h",
+                        "Kim2": "I can't wait!$4"
+                    }
+                },
+
+                /*********
+                ** Marriage Dialogue
+                *********/     
+                {
+                    "LogName": "Marriage Dialogue",
+                    "Action": "Load",
+                    "Target": "Characters/Dialogue/MarriageDialogueKim",
+                    "FromFile": "assets/dialogue/MarriageDialogueNoJade.json",
+                        "When": { "HasMod |contains=malic.cp.jadeNPC": false }
+                },
+
+                {
+                    "LogName": "SVW - BAGI Wine Sprite",
+                    "Action": "EditImage",
+                    "Target": "{{spacechase0.JsonAssets/ObjectSpriteTilesheet:Sweet Vermillion Wine}}",
+                    "FromFile": "assets/img/object_BAGI.png",
+                        "When": { "HasMod |contains=Cat.BetterArtisanGoodIcons": true, "HasMod |contains=Cheerybelle.CompromiseBAGI": true, "HasMod |contains=JyeulDessert.ExnoticTest": true }
+                },
+
+                /*********
+                ** Spouse Room
+                *********/
+                    /*********
+                    ** Spouse Room - NPC Entry
+                    *********/                 
+                    {
+                        "Action": "EditData",
+                        "Target": "Data/SpouseRooms",
+                        "Entries":
+                        {
+                            "Kim": "Kim_SpouseRoom/0"
+                        }
+                    },
+
+                    /*********
+                    ** Spouse Room - Map Load
+                    *********/                 
+                    {
+                        "Action": "Load",
+                        "Target": "Maps/Kim_SpouseRoom",
+                        "FromFile": "maps/SpouseRoom_Kim.tmx"
+                    },
+    
+        /*********
+        ** Includes
+        *********/
+            /*********
+            ** Base Include
+            *********/            
+            {
+                "Action": "Include",
+                "FromFile": "assets/includes/KimNPC.json",
+                    "When": { "HasMod: |contains=CPBoardingHouse": false }
+            },
+    
+            {
+                "Action": "Include",
+                "FromFile": "assets/includes/KimFDialogue.json",
+            },
+
+        /*********
+        ** Dynamic Changes
+        *********/
+            /*********
+            ** Seasonal Outfits
+            *********/    
+            {
+                "Action": "Include",
+                "FromFile": "assets/includes/KimCharacter.json",
+                "When": { "Seasonal-Outfit": true }
+            },
+            {
+                "Action": "Include",
+                "FromFile": "assets/includes/KimCharacter-2.json",
+                "When": { "Seasonal-Outfit": false }
+            },
+    
+    
+    
+        /*********
+        ** IntermodCompat
+        *********/
+            /*********
+            ** Jade 
+            *********/         
+                /*********
+                ** Marriage Dialogue with Jade installed
+                *********/     
+                {
+                    "LogName": "Kim NPC - Marriage Dialogue with Jade installed",
+                    "Action": "Load",
+                    "Target": "Characters/Dialogue/MarriageDialogueKim",
+                    "FromFile": "assets/dialogue/MarriageDialogue.json",
+                        "When": { "HasMod |contains=malic.cp.jadeNPC": true }
+                },
+
+            /*********
+            ** Boarding House
+            *********/ 
+                /*********
+                ** Boarding House Map Merge
+                *********/    
+                {
+                    "Action": "EditMap",
+                    "Target": "Maps/BoardingHouse2",
+                    "FromFile": "Assets/Maps/BoardingHouse-Kim.tmx",
+                    "FromArea": { "X": 0, "Y": 0, "Width": 11, "Height": 12 },
+                    "ToArea": { "X": 22, "Y": 0, "Width": 11, "Height": 12 },
+                    "PatchMode": "Replace",
+                        "When": { "HasMod: |contains=CPBoardingHouse": true }
+                },
+
+                {
+                    "Action": "Include",
+                    "FromFile": "assets/includes/KimNPC_BoardingHouse.json",
+                        "When": { "HasMod": "KimBoardingHouse.ExnoticTest" }
+                },
+
+            /*********
+            ** Stardew Valley Expanded
+            *********/ 
+                /*********
+                ** Schedules
+                *********/ 
+      {
+         "Action": "EditData",
+         "Target": "Characters/schedules/Kim",
+         "Entries": {
+           "spring_Tue": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "spring_Wed": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "spring_Thu": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "spring_Sat": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "spring_Sun": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "summer_Tue": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "summer_Wed": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "summer_Thu": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "summer_Sat": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "summer_Sun": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "fall_Tue": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "fall_Wed": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "fall_Thu": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "fall_Sat": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+           "fall_Sun": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+          },
+        "When": {
+          "HasMod|contains=KimBoardingHouse.ExnoticTest": "false",
+          "Relationship:Kim": "Unmet, Friendly, Dating, Engaged, Divorced"
+          },
+      },
+      {
+         "Action": "EditData",
+         "Target": "Characters/schedules/Kim",
+         "Entries": {
+           "spring_Tue": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "spring_Wed": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "spring_Thu": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "spring_Sat": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "spring_Sun": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "summer_Tue": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "summer_Wed": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "summer_Thu": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "summer_Sat": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "summer_Sun": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "fall_Tue": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "fall_Wed": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "fall_Thu": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "fall_Sat": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+           "fall_Sun": "700 Town 63 24 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BoardingHouse2 30 3 0",
+          },
+        "When": {
+          "HasMod": "KimBoardingHouse.ExnoticTest",
+          "Relationship:Kim": "Unmet, Friendly, Dating, Engaged, Divorced"
+          },
+      },
+
+                /*********
+                ** Festivals
+                *********/ 
+                    /*********
+                    ** Spring
+                    *********/
+                        /*********
+                        ** Egg Festival
+                        *********/ 
+                        {
+                            "Action": "EditData",
+                            "Target": "Data/Festivals/spring13",
+                            "TextOperations":
+                            [
+                                {
+                                    "Operation": "Append",
+                                    "Target": ["Entries", "Set-Up_additionalCharacters"],
+                                    "Value": "Kim 46 56 down",
+                                    "Delimiter": "/"
+                                },
+                            ],
+                                "When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true, },                            
+                        },  
+
+                        /*********
+                        ** Spirit's Eve
+                        *********/ 
+                            /*********
+                            ** Set Up
+                            *********/                 
+                            {
+                                "Action": "EditData",
+                                "Target": "Data/Festivals/fall27",
+                                "TextOperations":
+                                [
+                                    {
+                                        "Operation": "Append",
+                                        "Target": ["Entries", "Set-Up_additionalCharacters"],
+                                        "Value": "Kim 16 25 left",
+                                        "Delimiter": "/"
+                                    },
+                                ],
+                                    "When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true, },                                  
+                            }, 
+                    
+            /*********
+            ** Toshinori
+            *********/
+                /*********
+                ** Base Include
+                *********/ 
+                {
+                    "Action": "Include",
+                    "FromFile": "assets/includes/KimToshi.json",
+                        "When": { "HasMod|contains=FuzzyMittens.Toshinori": true }
+                },
+
+                /*********
+                ** Conversation Topics
+                *********/            
+                {
+                    "Action": "Include",
+                    "FromFile": "assets/includes/KimToshi-CT.json",
+                        "When": { "HasMod|contains=FuzzyMittens.Toshinori": true }
+                },
+
+            /*********
+            ** Shouko Nishimiya
+            *********/
+            {
+                "Action": "Include",
+                "FromFile": "assets/includes/KimShouko.json",
+                    "When": { "HasMod|contains=Enderwarrior360.ShoukoNishimiyaMod": true }
+            },
+
+            /*********
+            ** Mike NPC
+            *********/        
+            {
+                "Action": "Include",
+                "FromFile": "assets/includes/KimMike.json",
+                    "When": { "HasMod|contains=SYS.mike": true }
+            },
+
+        /*********
+        ** unfinished - expect events coming in either 3.9.0 or 4.0.0, current status as of 3.8.0: nothing major done yet, just wrote the code for the event characters
+        *********/             
+        /*
+        {
+            "Action": "Include",
+            "FromFile": "assets/includes/EventCharacters.json",
+        },
+    
+        {
+            "Action": "Include",
+            "FromFile": "assets/includes/KimEvents.json",
+        },
+        */
+        /*********        /*********        /*********        /*********        /*********        /*********
+        /********* NEW
+        /*********        /*********        /*********        /*********        /*********        /*********/
+
+    {
+        "LogName": "Schedule",
+        "Action": "EditData",
+        "Target": "Characters/Schedules/Kim",
+        "Entries":
+        {
+            "spring": "700 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+            "summer": "700 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+            "fall": "700 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+            "winter": "700 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+            "rain": "630 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+            "marriage_Tue": "730 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:married.001\"",
+            "marriage_Thu": "730 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 18 20 0 \"Strings\\schedules\\Kim:married.001\"",
+        },
+            "When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": false, "HasMod |contains=malic.cp.jadeNPC": true, }
+    },
+
+    {
+        "LogName": "Schedule",
+        "Action": "EditData",
+        "Target": "Characters/Schedules/Kim",
+        "Entries":
+        {
+            "spring": "700 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+            "summer": "700 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+            "fall": "700 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+            "winter": "700 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+            "rain": "630 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:drinking.000\"/2400 BusStop 12 10 0",
+            "marriage_Tue": "730 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:married.001\"/2400 BusStop 12 10 0",
+            "marriage_Thu": "730 Town 34 73 3/1100 Town 54 69 0/1500 Town 25 22 2/1900 Saloon 17 20 0 \"Strings\\schedules\\Kim:married.001\"/2400 BusStop 12 10 0",
+        },
+            "When": { "HasMod: |contains=FlashShifter.StardewValleyExpandedCP": true, "HasMod |contains=malic.cp.jadeNPC": true, }
+    },
+
+
+
+
+    {
+      "LogName": "NPC Portrait",
+      "Action": "Load",
+      "Target": "Portraits/Kim",
+      "FromFile": "assets/img/Kim_{{season}}.png",
+      "When": {
+          "DayEvent |contains=egg festival": "false",
+          }                 
+    },
+    {
+      "LogName": "NPC Portrait",
+      "Action": "Load",
+      "Target": "Portraits/Kim",
+      "FromFile": "assets/img/Kim_EggFestival.png",
+      "When": {
+          "DayEvent": "egg festival",
+          }
+    },
+    {
+      "LogName": "NPC Portrait",
+      "Action": "EditImage",
+      "Target": "Portraits/Kim",
+      "FromFile": "assets/img/Kim_FlowerDance.png",
+      "When": {
+          "DayEvent": "flower dance",
+          }
+    },
+    {
+      "LogName": "NPC Sprite",
+      "Action": "Load",
+      "Target": "Characters/Kim",
+      "FromFile": "assets/img/Kim Sprite_{{season}}.png",
+      "When": {
+          "DayEvent |contains=egg festival": "false",
+          }   
+    },
+    {
+      "LogName": "NPC Sprite",
+      "Action": "Load",
+      "Target": "Characters/Kim",
+      "FromFile": "assets/img/Kim Sprite_EggFestival.png",
+      "When": {
+          "DayEvent": "egg festival",
+          }
+    },
+    {
+      "LogName": "NPC Sprite",
+      "Action": "EditImage",
+      "Target": "Characters/Kim",
+      "FromFile": "assets/img/Kim Sprite_FlowerDance.png",
+      "When": {
+          "DayEvent": "flower dance",
+          }
+    }
+
+    {
+      "LogName": "NPC Portrait",
+      "Action": "Load",
+      "Target": "Portraits/Kim",
+      "FromFile": "assets/img/Kim_Fall.png",              
+    },
+    {
+      "LogName": "NPC Sprite",
+      "Action": "Load",
+      "Target": "Characters/Kim",
+      "FromFile": "assets/img/Kim Sprite_Fall.png",
+    }
+
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/spring13",
+      "Entries": {
+          "Kim": "Ew, the eggs smell rotten.$2#$b#This is a nice festival though.$h"
+       }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/spring24",
+      "Entries": {
+          "Kim": "Hi, @.$0#$b#I don't like to dance, I'm too shy.$2#$b#Lewis makes us come here anyway."
+       }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/summer5",
+      "Entries": {
+          "Kim": "Hi @!$h#$b#Are you going to surf today?"
+       },
+      "When": 
+       {
+           "HasMod |contains=spacechase0.SurfingFestival": true,
+       }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/summer11",
+      "Entries": {
+          "Kim": "I don't like soup, it's gross to me.$2"
+       }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/summer28",
+      "Entries": {
+          "Kim": "The moonlight jellies look nice.$h#$e#I like their colors."
+       }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/fall16",
+      "Entries": {
+          "Kim": "I don't love coming here, Lewis forces everyone to attend.$2#$b#But it's nice to see you here.$h"
+       },
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": false
+       }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/fall16",
+      "Entries": {
+          "Kim": "I don't love coming here, Lewis forces everyone to attend.$2#$b#It's probably good to catch up with Jade though.$h"
+       },
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": true
+       }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/fall27",
+      "Entries": {
+          "Kim": "I'm scared...$2"
+       }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/winter8",
+      "Entries": {
+          "Kim": "It's very cold out here. I should've wore a jacket...$2"
+       }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/winter25",
+      "Entries": {
+          "Kim": "Hi @!$h#$b#I can't wait to see my gift!"
+       },
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": false
+       }
+    },
+    {
+      "Action": "EditData",
+      "Target": "Data/Festivals/winter25",
+      "Entries": {
+          "Kim": "Hi @!$h#$b#I hope my gift giver is Jade. She knows me very well."
+       },
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": true
+       }
+    }
+
+    {
+      "LogName": "Kim - Mike",
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/Kim",
+      "Entries": {
+                   "30" : "It's pretty cool Mike knows how to play guitar.$h",
+                   "2" : "I want to go to university someday.$h",
+                 }
+           }
+
+    {
+      "LogName": "NPC Manifestation",
+      "Action": "EditData",
+      "Target": "Data/NPCDispositions",
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": false
+       },
+      "Entries": {
+        "Kim": "teen/polite/shy/positive/female/datable/Sophia/Other/fall 3//BusStop 8 13 2/Kim"
+      }
+    },
+    {
+      "LogName": "NPC Manifestation",
+      "Action": "EditData",
+      "Target": "Data/NPCDispositions",
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": true
+       },
+      "Entries": {
+        "Kim": "teen/polite/shy/positive/female/datable/Jade/Other/fall 3//BusStop 8 13 2/Kim"
+      }
+    },
+    {
+      "LogName": "NPC Gift Tastes",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Kim":"Oh @, thank you!$h/72 234 18/Thanks! This is a nice gift.$h/611 597 62 595 227/Thanks, I guess.$0/22 376 591 608/Get that away from me.$2/241 404 420 422 205/Oh...um...thanks.$0/167/"
+      }
+    },
+    {
+      "LogName": "Schedule",
+      "Action": "Load",
+      "Target": "Characters/Schedules/Kim",
+      "FromFile": "assets/schedules/Schedule-SVE.json",
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": false,
+       }
+    },
+    {
+      "LogName": "Schedule",
+      "Action": "Load",
+      "Target": "Characters/Schedules/Kim",
+      "FromFile": "assets/schedules/Schedule-Jade-SVE.json",
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": true,
+       }
+    },
+    {
+      "LogName": "Strings",
+      "Action": "Load",
+      "Target": "Strings/schedules/Kim",
+      "FromFile": "assets/KimStrings.json"
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Kim",
+      "FromFile": "assets/dialogue/Dialogue.json",
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": false
+       }
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Kim",
+      "FromFile": "assets/dialogue/Dialogue-Jade.json",
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": true
+       }
+    }
+
+    {
+      "LogName": "Event Portrait",
+      "Action": "Load",
+      "Target": "Portraits/HanaJyeul",
+      "FromFile": "assets/img/event/HanaP.png",              
+    },
+    {
+      "LogName": "Event Sprite",
+      "Action": "Load",
+      "Target": "Characters/HanaJyeul",
+      "FromFile": "assets/img/event/HanaC.png",
+    },
+    {
+      "LogName": "Event Portrait",
+      "Action": "Load",
+      "Target": "Portraits/YoonJyeul",
+      "FromFile": "assets/img/event/YoonP.png",              
+    },
+    {
+      "LogName": "Event Sprite",
+      "Action": "Load",
+      "Target": "Characters/YoonJyeul",
+      "FromFile": "assets/img/event/YoonC.png",
+    },
+    {
+      "LogName": "Event Portrait",
+      "Action": "Load",
+      "Target": "Portraits/TaeyulJyeul",
+      "FromFile": "assets/img/event/TaeyulP.png",              
+    },
+    {
+      "LogName": "Event Sprite",
+      "Action": "Load",
+      "Target": "Characters/TaeyulJyeul",
+      "FromFile": "assets/img/event/TaeyulC.png",
+    },
+    {
+      "LogName": "Event Portrait",
+      "Action": "Load",
+      "Target": "Portraits/KimGotoro",
+      "FromFile": "assets/img/event/KimP.png",              
+    },
+    {
+      "LogName": "Event Sprite",
+      "Action": "Load",
+      "Target": "Characters/KimGotoro",
+      "FromFile": "assets/img/event/KimC.png",
+    },
+
+    {
+      "LogName": "Kim - Shouko",
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/Kim",
+      "Entries": {
+                   "25" : "Shouko is pretty nice.$0#$b#I want to learn sign language so I can talk to her someday.$h",
+                   "7" : "Shouko is pretty nice.$h",
+                 }
+           }
+    {
+      "LogName": "Kim - Toshi Topics",
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/Kim",
+      "Entries": {
+"TalkingAboutToshinori" : "I met Toshi when I was 14, when I lived in the far side of Gotoro.$0#$b#We became good friends.$h",
+"MarriedToToshinori": "Congrats on the marriage, @!$h",
+"ToshisSon": "Izuku seems nice, this is my first time meeting him.$h",
+"ToshiAndGeorge": "I really felt uncomfortable around George, because I'm bisexual.$s#$b#I'm glad Toshi did that.$h",
+"ToshiAndDemetrius": "I really think Maru and Sebastian should be treated equally, Toshi was right for doing that.$2",
+"ToshiAndPam": "Pam should cut down on the alcohol, if she wants to live longer.$0#$b#I can't help but feel bad for what Penny has to go through...$s",
+"ToshisPTSD": "Toshinori's been acting a bit strange lately, I think he needs help.$s",
+"ToshiGotTherapy": "I'm glad Toshi is getting therapy, he really needs it.$h",
+"ToshinorisDeathScene": "Toshi was a good friend... I'm sad he died...$s#$b#I hope he does well in heaven...$s"
+                 }
+           }
+
+    {
+      "LogName": "Kim - Toshi",
+      "Action": "EditData",
+      "Target": "Characters/Dialogue/Kim",
+      "Entries": {
+                   "27" : "Toshinori is a pretty good guy, don't you think?$h",
+                   "5" : "Toshinori is a pretty good guy, don't you think?$h",
+                 }
+           }
+
+    {
+      "LogName": "NPC Manifestation",
+      "Action": "EditData",
+      "Target": "Data/NPCDispositions",
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": false
+       },
+      "Entries": {
+        "Kim": "teen/polite/shy/positive/female/datable/Sophia/Other/fall 3//BoardingHouse2 28 4 2/Kim"
+      }
+    },
+    {
+      "LogName": "NPC Manifestation",
+      "Action": "EditData",
+      "Target": "Data/NPCDispositions",
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": true
+       },
+      "Entries": {
+        "Kim": "teen/polite/shy/positive/female/datable/Jade/Other/fall 3//BoardingHouse2 28 4 2/Kim"
+      }
+    },
+    {
+      "LogName": "NPC Gift Tastes",
+      "Action": "EditData",
+      "Target": "Data/NPCGiftTastes",
+      "Entries": {
+        "Kim":"Oh @, thank you!$h/72 234 18/Thanks! This is a nice gift.$h/611 597 62 595 227/Thanks, I guess.$0/22 376 591 608/Get that away from me.$2/241 404 420 422 205/Oh...um...thanks.$0/167/"
+      }
+    },
+    {
+      "LogName": "Schedule",
+      "Action": "Load",
+      "Target": "Characters/Schedules/Kim",
+      "FromFile": "assets/schedules/BoardingHouse/Schedule-SVE.json",
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": false,
+       }
+    },
+    {
+      "LogName": "Schedule",
+      "Action": "Load",
+      "Target": "Characters/Schedules/Kim",
+      "FromFile": "assets/schedules/BoardingHouse/Schedule-Jade-SVE.json",
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": true,
+       }
+    },
+    {
+      "LogName": "Strings",
+      "Action": "Load",
+      "Target": "Strings/schedules/Kim",
+      "FromFile": "assets/KimStrings.json"
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Kim",
+      "FromFile": "assets/dialogue/Dialogue.json",
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": false
+       }
+    },
+    {
+      "LogName": "Dialogue",
+      "Action": "Load",
+      "Target": "Characters/Dialogue/Kim",
+      "FromFile": "assets/dialogue/Dialogue-Jade.json",
+      "When": 
+       {
+           "HasMod |contains=malic.cp.jadeNPC": true
+       }
+    }
+
+    ]
+}

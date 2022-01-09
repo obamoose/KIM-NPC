@@ -1,0 +1,11 @@
+{
+  "Name": "Kim Jyeul - Quest Framework",
+  "Author": "ilyAoiMiyake (formerly ExnoticTest)",
+  "Version": "1.0",
+  "Description": "One or two sentences about the mod.",
+  "UniqueID": "KimQuest.ilyAoiMiyake",
+  "MinimumApiVersion": "3.6.0",
+  "ContentPackFor": {
+    "UniqueID": "PurrplingCat.QuestFramework",
+  }
+}

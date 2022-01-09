@@ -1,0 +1,52 @@
+{
+     "Changes": [
+	{
+      "LogName": "Event Portrait",
+      "Action": "Load",
+      "Target": "Portraits/HanaJyeul",
+      "FromFile": "assets/img/event/HanaP.png",              
+    },
+	{
+      "LogName": "Event Sprite",
+      "Action": "Load",
+      "Target": "Characters/HanaJyeul",
+      "FromFile": "assets/img/event/HanaC.png",
+    },
+	{
+      "LogName": "Event Portrait",
+      "Action": "Load",
+      "Target": "Portraits/YoonJyeul",
+      "FromFile": "assets/img/event/YoonP.png",              
+    },
+	{
+      "LogName": "Event Sprite",
+      "Action": "Load",
+      "Target": "Characters/YoonJyeul",
+      "FromFile": "assets/img/event/YoonC.png",
+    },
+	{
+      "LogName": "Event Portrait",
+      "Action": "Load",
+      "Target": "Portraits/TaeyukJyeul",
+      "FromFile": "assets/img/event/TaeyukP.png",              
+    },
+	{
+      "LogName": "Event Sprite",
+      "Action": "Load",
+      "Target": "Characters/TaeyukJyeul",
+      "FromFile": "assets/img/event/TaeyukC.png",
+    },
+	{
+      "LogName": "Event Portrait",
+      "Action": "Load",
+      "Target": "Portraits/KimGotoro",
+      "FromFile": "assets/img/event/KimP.png",              
+    },
+	{
+      "LogName": "Event Sprite",
+      "Action": "Load",
+      "Target": "Characters/KimGotoro",
+      "FromFile": "assets/img/event/KimC.png",
+    },
+  ]
+}

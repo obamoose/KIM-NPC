@@ -1,0 +1,37 @@
+{
+  "Format": "1.0",
+  "Quests": [
+    {
+      "Name": "kim_winemaking",
+      "Type": "ItemDelivery",
+      "Title": "Wine Making",
+      "Description": "Kim is making her signature wine, and she needs 10 fresh cherries to start.",
+      "Objective": "Bring 10 cherries to Kim.",
+      "DaysLeft": 10,
+      "Reward": 400,
+      "RewardType": "Money",
+      "Cancelable": true,
+      "Trigger": "Kim 638 10",
+      "ReactionText": "Thank you very much! I can get back to making more wine.",
+      "FriendshipGain": {
+        "Kim": 150
+      }
+    },
+    {
+      "Name": "kim_winemaking2",
+      "Type": "ItemDelivery",
+      "Title": "Wine Making",
+      "Description": "Kim is making her signature wine, and she needs 10 fresh starfruits to start.",
+      "Objective": "Bring 10 starfruit to Kim.",
+      "DaysLeft": 30,
+      "Reward": 1300,
+      "RewardType": "Money",
+      "Cancelable": true,
+      "Trigger": "Kim 268 10",
+      "ReactionText": "Thank you very much! I can get back to making more wine.",
+      "FriendshipGain": {
+        "Kim": 300
+      }
+    },
+  ]
+}

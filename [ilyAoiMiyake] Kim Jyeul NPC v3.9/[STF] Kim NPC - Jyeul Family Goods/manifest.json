@@ -1,0 +1,22 @@
+﻿{
+  "Name": "Kim Jyeul - Shop",
+  "Author": "ilyAoiMiyake",
+  "Version": "1.1",
+  "Description": "Kim NPC",
+  "UniqueID": "KimShopSTF.ilyAoiMiyake",
+  "MinimumApiVersion": "3.0.0",
+  "ContentPackFor": {
+    "UniqueID": "Cherry.ShopTileFramework"
+  },
+  "Dependencies": [
+    {
+      "UniqueID": "KimJyeulNPC.ExnoticTest"
+    },
+    {
+      "UniqueID": "JyeulRecipe.ExnoticTest"
+    },
+    {
+      "UniqueID": "Cherry.ExpandedPreconditionsUtility",
+    }
+  ]
+}

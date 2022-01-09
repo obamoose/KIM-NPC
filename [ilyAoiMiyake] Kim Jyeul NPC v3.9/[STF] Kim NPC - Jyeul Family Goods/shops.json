@@ -1,0 +1,29 @@
+{
+  "Shops": [
+    {
+      "ShopName": "JyeulFamilyGoods",
+      "PortraitPath": "assets/KimGoods.png",
+      "Quote": "Welcome!", 
+      "ItemStocks": [
+        {
+          "ItemType": "Object",
+          "ItemNames": [
+            "Cherry Cobbler"
+          ],
+          "StockPrice": 300,
+        },
+        {
+          "ItemType": "Object",
+          "ItemNames": [
+            "Sweet Vermillion Wine"
+          ],
+          "StockPrice": 700,
+        }
+      ],
+      "When": [
+        "d Mon Fri/z winter/t 900 1900/NPCAt Kim 61 24 62 24 63 24 64 24",
+          ],
+      "ClosedMessage": "We are currently closed! - Kim"
+    }
+  ]
+}
